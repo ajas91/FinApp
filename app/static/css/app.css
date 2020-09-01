@@ -1,0 +1,99 @@
+* {
+  box-sizing:border-box;
+}
+.c0{
+
+}
+
+.c1 {
+  background-color:#2196F3;
+  padding:20px;
+  float:left;
+  width:100%; /* The width is 20%, by default */
+  text-align: center;
+}
+
+.c2, .c3, .c4 {
+  /* background-color:#f1f1f1; */
+  padding:20px;
+  float:left;
+  width:50%; /* The width is 60%, by default */
+  text-align: center;
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width:800px) {
+  .c0 .c1, .c2, .c3, .c4, .menu, .footer  {
+    width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+th.ten{
+    width: 10%;
+}
+
+th.fifty{
+    width: 50%;
+}
+
+th.twenty{
+    width: 20%;
+}
+
+
+/* div.limiter {
+    width: 1366px;
+    margin: 0 auto;
+} */
+
+/*div.container-table100 {
+    width: 100%;
+    min-height: 100vh;
+    /* background: #fff;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+}
+
+div.wrap-table100 {
+    width: 1170px;
+}*/
+
+
+table {
+    /* table-layout: fixed; */
+    width: 100%;
+    border-spacing: 0.5rem;
+}
+
+th, td {
+    font-weight: unset;
+    padding-right: 10px;
+    padding-left: 15px;
+    border: 1px solid #999;
+    padding: 1rem;
+}
+
+thead{
+    background-color: #a3c3e6;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+input.delete{
+  border-color: #f44336;
+  color: red
+}
+
+input.delete:hover {
+  background: #f44336;
+  color: white;
+}

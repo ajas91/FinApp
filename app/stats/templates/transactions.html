@@ -1,0 +1,73 @@
+{# Transactions Page #}
+{% extends "base.html" %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block Menu %}
+        <li><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li class="active"><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block Nav %}
+        <li><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li class="active"><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="limiter input-full-width container-table100 ">
+    <!-- <div class="container-table100"> -->
+        <!-- <div class="wrap-table100"> -->
+            <div class="table100 ver1" style="overflow-x:auto;">
+                <table class="table table-striped table-bordered table-sm" id="dtBasicExample">
+                    <div class="table100-head">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1 ten" style="background:#2b3a25">Date</th>
+                                <th class="cell100 column2 fifty" style="background:#2b3a25">Description</th>
+                                <th class="cell100 column3 ten" style="background:#2b3a25">Debit</th>
+                                <th class="cell100 column4 ten" style="background:#2b3a25">Credit</th>
+                                <th class="cell100 column5 ten" style="background:#2b3a25">Account</th>
+                                <th class="cell100 column5 ten" style="background:#2b3a25">Category</th>
+                            </tr>
+                        </thead>
+                    </div>
+
+                    <div class="table100-body js-pscroll">
+                        <tbody>
+                            {% for i in range(leng) %}
+                            <tr class="row100 body">
+                                <td class="cell100 column1 ten">{{ df.loc[i, 'Date']}}</td>
+                                <td class="cell100 column2 fifty">{{ df.loc[i, 'Description']}}</td>
+                                <td class="cell100 column3 ten">{{ df.loc[i,'Debit'] }}</td>
+                                <td class="cell100 column4 ten">{{ df.loc[i,'Credit'] }}</td>
+                                <td class="cell100 column5 ten">{{ df.loc[i,'Account'] }}</td>
+                                <td class="cell100 column6 ten">{{ df.loc[i,'Category'] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </div>
+                </table>
+            </div>
+        <!-- </div> -->
+    <!-- </div> -->
+</div>
+{% endblock %}
+
+{% block addScript %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#dtBasicExample').DataTable({
+            "pagingType": "numbers" // "simple" option for 'Previous' and 'Next' buttons only
+        });
+    $('.dataTables_length').addClass('bs-select');
+});
+</script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{# Upload Statement Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+        <li class="active"><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block Nav %}
+        <li class="active"><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-2 m-auto">
+            <div class="hero__form">
+                <div class="text-center">
+                Please select the type of Statement you would like to upload! <br> <br>
+                <ul class="text-left">
+                <li> You can only upload statements of the following Banks: <br></li>
+                <li> National Bank Of Oman Account Statement <br> </li>
+                <li> Bank Muscat Account Statement <br></li>
+                <li>Bank Muscat Credit Card Statement </li>
+                </ul> <br>
+                <div class="text-danger">
+                    All statements shall be in Excel Format
+                </div>
+                </div> <br> <br>
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="input-list last">
+                        <div class="input-list-item">
+                            <p>Bank</p>
+                            {{form.bank(class_="custom-select")}}
+                        </div>
+                        <div class="input-list-item">
+                            <p>Account</p>
+                            {{form.accounts(class_="custom-select")}}
+                        </div>
+                    </div>
+
+                    <div class="input-full-width">
+                        <p>select file</p>
+                        <label class="text-center" for="file" style="width: 100%;
+                        height: 48px;
+                        border-radius: 2px;
+                        border: none;
+                        background: #f6f6f6;
+                        padding-left: 15px;
+                        padding: 10px 0;">
+                        <input type="file" name="file" id="custom-file-input"> Choose a file in Excel format</label>
+                    </div>
+                    <button type="submit" class="site-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block addScript %}
+<script type="text/javascript">
+
+    var bankElement = document.getElementById("bank");
+    var accountElement = document.getElementById("accounts");
+    bankElement.nextSibling.remove();
+    bankElement.style.display = "block";
+    accountElement.nextSibling.remove();
+    accountElement.style.display = "block";
+
+</script>
+
+
+{% endblock %}

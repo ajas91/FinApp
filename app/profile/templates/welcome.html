@@ -1,0 +1,34 @@
+{# Welcome Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+        <li><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block Nav %}
+        <li><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="hero__text text">
+                    <h2>Your way of Saving!
+                    <br>
+                    Your main statistics are
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

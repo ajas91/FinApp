@@ -1,0 +1,24 @@
+{# Logout Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+    <li><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block Nav %}
+    <li><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="hero__text text">
+                <h2>See you soon!</h2>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

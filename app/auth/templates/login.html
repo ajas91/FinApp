@@ -1,0 +1,47 @@
+{# Login Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+    <li><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li class="active"><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block Nav %}
+    <li><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li class="active"><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-2 m-auto">
+            <div class="hero__form">
+                <h3>Login</h3>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="input-full-width">
+                        <p>Username</p>
+                        {{form.username}}
+                    </div>
+                    {% if form.username.errors %}
+                    <p class="alert alert-warning" role="alert"><strong>Error:</strong>{{form.username.errors}}</p>
+                    {% endif %}
+                    <div class="input-full-width">
+                        <p>Password</p>
+                        {{form.password}}
+                    </div>
+                    {% if form.password.errors %}
+                    <p class="alert alert-warning" role="alert"><strong>Error:</strong>{{form.password.errors}}</p>
+                    {% endif %}
+                    <div style="text-align:center" >
+                        {{form.submit(class_="site-btn")}}
+                    </div>
+                    <div class="sign-in text-center" style="padding: 1rem 0;">
+                        New user <a href="{{url_for('auth_bp.signup')}}" class="form-link">sign up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

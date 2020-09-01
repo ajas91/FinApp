@@ -1,0 +1,62 @@
+{# Sign up Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+    <li class="active"><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block Nav %}
+    <li class="active"><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-2 m-auto">
+            <div class="hero__form">
+                <h3>Sign Up</h3>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="input-full-width">
+                            <p>Username</p>
+                            {{form.username}}
+                    </div>
+                    {% if form.username.errors %}
+                    <div class="alert alert-warning" role="alert"><strong>Error:</strong>{{form.username.errors}}</div>
+                    {% endif %}
+                    <div class="input-full-width">
+                        <p>Email</p>
+                        {{form.email}}
+                    </div>
+                    {% if form.email.errors %}
+                    <div class="alert alert-warning" role="alert"><strong>Error:</strong>{{form.email.errors}}</div>
+                    {% endif %}
+                    <div class="input-list last">
+                        <div class="input-list-item">
+                            <p>Password</p>
+                            {{form.password}}
+                        </div>
+                        <div class="input-list-item">
+                            <p>Renter Password</p>
+                            {{form.confirm}}
+                        </div>
+                        {% if form.password.errors %}
+                        <div class="alert alert-warning" role="alert"><strong>Error:</strong>{{form.password.errors}}</div>
+                        {% endif %}
+                    </div>
+                    <div style="text-align:center" >
+                        {{form.submit(class_="site-btn")}}
+                    </div>
+                </form>
+                <div class="sign-in text-center" style="padding: 1rem 0;">
+                   Already a member
+                   <a href="{{url_for('auth_bp.login')}}" class="form-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

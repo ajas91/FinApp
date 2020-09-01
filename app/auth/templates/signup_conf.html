@@ -1,0 +1,26 @@
+{# Signup Confirmation Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+    <li class="active"><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block Nav %}
+    <li class="active"><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="hero__text text">
+                <h2>Thanks for registering with us. Please check your email for confirmation!
+                    <br>You may Login now to start Saving!
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

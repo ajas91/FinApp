@@ -1,0 +1,102 @@
+{# Add Transaction Page #}
+{% extends "base.html" %}
+
+{% block Menu %}
+        <li><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li class="active"><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block Nav %}
+        <li><a href="{{url_for('trans_bp.up_statement')}}">Upload Statement</a></li>
+        <li class="active"><a href="{{url_for('trans_bp.addTrans')}}">Add Transaction</a></li>
+        <li><a href="{{url_for('stats_bp.transactions')}}">Transactions</a></li>
+        <li><a href="{{url_for('stats_bp.statistics')}}">Statistics</a></li>
+        <li><a href="{{url_for('profile_bp.logout')}}">Logout</a></li>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 offset-lg-2 m-auto">
+            <div class="hero__form">
+                <div class="text-center">
+                    Please fill the fields to add a new transaction.
+                    <br> <br>
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="input-full-width">
+                        <p>Date</p>
+                        <input type="date" class="form-control" name="date">
+                    </div>
+                    <div class="input-full-width">
+                        <p>Description</p>
+                        {{form.description(class_="form-control")}}
+                    </div>
+                    <div class="input-full-width">
+                        <p>Transaction Type:</p>
+                        <Select name='SelectCat' id='SelectCat' class="custom-select" onchange="selCat()">
+                            <option value=0> </option>
+                            <option value=1>Income </option>
+                            <option value=2>Expense </option>
+                        </Select>
+                    </div>
+                    <br><br><br><br>
+                    <div id= "credit">
+                        <div class="input-full-width">
+                            Category:
+                            {{form.in_category(class_="custom-select")}}
+                        </div>
+                        <br><br><br><br>
+                        <div class="input-full-width">
+                            Credit:
+                            {{form.credit(class_="form-control")}}
+                        </div>
+                        <br><br><br><br>
+                    </div>
+                    <div id="debit">
+                        <div class="input-full-width">
+                            Category
+                            {{form.ex_category(class_="custom-select")}}
+                        </div>
+                        <br><br><br><br>
+                        <div class="input-full-width">
+                            Debit
+                            {{form.debit(class_="form-control")}}
+                        </div>
+                        <br><br><br><br>
+                    </div>
+                    <div class="input-full-width">
+                        <p>Account</p>
+                        {{ accForm.accounts(class_="custom-select")}}
+                    </div>
+                    <br><br><br><br>
+                    <button type="submit" class="site-btn">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block addScript %}
+<script type="text/javascript">
+	const creditAmount = document.getElementById("credit");
+	const debitAmount = document.getElementById("debit");
+	creditAmount.style.display = "none";
+	debitAmount.style.display = "none";
+
+	function selCat(){
+	    var sel = document.getElementById("SelectCat");
+	    var selItem = sel.options[sel.selectedIndex].value;
+	    if (selItem == 1){
+	        creditAmount.style.display = "block";
+	        debitAmount.style.display = "none";
+	    } else if (selItem == 2){
+			creditAmount.style.display = "none";
+	        debitAmount.style.display = "block";
+	    }
+	}
+</script>
+{% endblock %}

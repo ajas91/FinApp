@@ -1,0 +1,29 @@
+{# Index Page #}
+
+{% extends "base.html" %}
+
+{% block Menu %}
+    <li><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block Nav %}
+    <li><a href="{{url_for('auth_bp.signup')}}">Sign up</a></li>
+    <li><a href="{{url_for('auth_bp.login')}}">Login</a></li>
+{% endblock %}
+
+{%block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="hero__text text">
+                    <h2>Your way of Saving!</h2>
+                    <p>Join Today to start saving well and managing your Personal Finance.</p>
+                    <a href="{{url_for('auth_bp.signup')}}" class="primary-btn">Get Start</a>
+                    <a href="{{url_for('auth_bp.login')}}" class="primary-btn howit-btn">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

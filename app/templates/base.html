@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Loanday Template">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Financail Tracking Application</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/chart.css" type="text/css">
+    <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/vendor/animate/animate.css" type="text/css">
+    <link rel="stylesheet" href="/static/vendor/select2/select2.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/vendor/perfect-scrollbar/perfect-scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/util.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/app.css" type="text/css">
+
+    {% block header %}
+
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+        <p>loading</p>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__logo">
+            <a href="{{url_for('auth_bp.index')}}"><img src="/static/images/logo.png" alt=""></a>
+        </div>
+        <nav class="offcanvas__menu mobile-menu">
+            <ul>
+                {% block Menu %}
+
+                {% endblock %}
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header" style="background: #2b3a25;">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="{{url_for('auth_bp.index')}}"><img src="/static/images/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="header__nav">
+                        <nav class="header__menu">
+                            <ul>
+                                {% block Nav %}
+
+                                {% endblock %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <span class="fa fa-bars"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        {% block content %}
+
+
+        {% endblock %}
+    </section>
+    <!-- Hero Section End -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="{{url_for('auth_bp.index')}}"><img src="/static/images/logo.png" alt=""></a>
+                        </div>
+                        <p>
+                            First Financial Tracking Application in Oman.
+                            We connect Local Banks to our app to automize your expenses tracking.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h5>Socials</h5>
+                        <div class="footer__widget footer__widget--social">
+                            <ul>
+                                <li><a href="https://www.instagram.com/ajastech/"><i class="fa fa-instagram"></i> Instagram</a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <ul class="footer__copyright__links">
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__copyright__text">
+                            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved aJaS-Tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.nice-select.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.min.js"></script>
+    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/js/jquery.slicknav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script type="text/javascript" src="/static/js/mdb.min.js"></script>
+    <script type="text/javascript" src="/static/js/addons/datatables.min.js"></script>
+    {% block addScript %}
+
+    {% endblock %}
+</body>
+
+</html>
