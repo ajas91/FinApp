@@ -1,4 +1,5 @@
 # This is FinApp
+## Python 3.7
 
 * To test this app please use the following details:
   **username**: _demo_   
