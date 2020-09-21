@@ -2,7 +2,6 @@
 .*DS_store
 ._*
 __pycache__/
-app/__pycache__
+app/__pycache__/
 app/*/__pycache__
 app/static/images/1output.png
-app/finapp.sqlite3
