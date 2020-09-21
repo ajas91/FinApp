@@ -17,4 +17,4 @@
 
 
 * To install requirements use the following command:
-`pip install -r requirements.txt`
+  `pip install -r requirements.txt`
