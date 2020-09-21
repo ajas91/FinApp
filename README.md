@@ -1,21 +1,20 @@
-This is FinApp
+# This is FinApp
 
-To test this app please use the following details:
-username: demo
-password: 12345678
+* To test this app please use the following details:
+  **username**: _demo_   
+  **password**: _12345678_
 
-You may use either SQLITE or POSTGRESQL as database manager. To change the
-database manager, change dbtype in config file
-Use the script setup.sh to setup the POSTGRESQL Database if required
+* You may use either **SQLITE** or **POSTGRESQL** as database manager.
+* To change the database manager, change `dbtype` in `config.py` file.
 
-Check the requirement.txt for the required packages.
+* Use the script `setup.sh` to setup the **POSTGRESQL** Database if required.
 
-To run the application:
-1- python run.py
-2- on your browser type localhost:8069
+* Check the `requirement.txt` for the required packages.
 
-
-To install requirements use the following command:
-pip install -r requirements.txt
+* To run the application:
+    * `python run.py`
+    * `on your browser type localhost:8069`
 
 
+* To install requirements use the following command:
+`pip install -r requirements.txt`
